@@ -1,29 +1,49 @@
-# AWS Static Website Hosting – Travel Blog 🌍
+### AWS Static Website Hosting – Travel Blog 🌍
 
-## 📘 Project Overview
-This project demonstrates how to **host a static website using Amazon S3** and **distribute it globally via CloudFront** for low-latency and high availability.
+A fully deployed static travel blog website hosted on Amazon S3 and distributed globally using Amazon CloudFront for fast, secure, and low-latency content delivery.
 
----
+This project demonstrates foundational AWS skills including storage, caching, permissions, distribution, and public hosting — fulfilling all requirements of the Udacity Cloud DevOps program.
 
-## 🧱 Website Setup
-- Contains HTML, CSS, JS, and images only (no backend processing).
-- Customized title: *Ishita's Travel Blog*.
-- Hero section features a personalized background image (`hero.jpeg`).
+### 📘 Project Overview
 
----
+This project showcases how to deploy a static website using:
+Amazon S3 as the storage layer
+CloudFront CDN for global content delivery
+Proper bucket permissions and static hosting configuration
+Public accessibility using both bucket endpoint and CloudFront URL
+The website is built using plain HTML, CSS, and JavaScript and includes custom images, layouts, and responsive design elements.
 
-## 🚀 Deployment Steps
+### 🧱 Website Features
 
-### 1. Create an S3 Bucket
-- Go to AWS Console → S3 → Create bucket.
-- Bucket name: `ishita-static-website`
-- Region: `ap-south-1`
-- Uncheck **Block all public access**.
-- Enable **Static website hosting** (Properties tab).
-- Note down the **Bucket Website Endpoint**.
+🌄 Custom hero banner (hero.jpeg)
+🌐 Multi-page layout (Home, About, Gallery, etc.)
+🎨 Clean design with CSS styling
+📱 Responsive layout for mobile and desktop
+⚡ Fast delivery through CloudFront caching
+🗂️ Organized project folder structure
 
-### 2. Upload Website Files
-Upload all project files (`index.html`, `about.html`, `css/`, `js/`, `images/`, etc.)
-or run:
-```bash
-aws s3 sync . s3://ishita-static-website --delete
+### 🌐 Public URLs
+- S3 Bucket Website Endpoint
+👉 <[http://my-722146899913-bucket.s3-website.us-east-2.amazonaws.com]>
+
+-CloudFront Distribution Domain
+👉 <[http://d37vjdrewn1bbc.cloudfront.net]>
+
+Both URLs allow public access for evaluation and meet Udacity submission requirements.
+
+### 🏗️ Architecture Diagram (Text-based)
+          +-----------------------+
+          |   User's Browser      |
+          +-----------+-----------+
+                      |
+                      v
+          +-----------------------+
+          |  Amazon CloudFront    |
+          | (Global CDN Cache)    |
+          +-----------+-----------+
+                      |
+                      v
+          +------------------------+
+          | Amazon S3 Bucket       |
+          | (Static Website Files) |
+          +------------------------+
