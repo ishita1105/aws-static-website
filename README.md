@@ -26,7 +26,7 @@ The website is built using plain HTML, CSS, and JavaScript and includes custom i
 - S3 Bucket Website Endpoint
 👉 <[http://my-722146899913-bucket.s3-website.us-east-2.amazonaws.com]>
 
--CloudFront Distribution Domain
+- CloudFront Distribution Domain
 👉 <[http://d37vjdrewn1bbc.cloudfront.net]>
 
 Both URLs allow public access for evaluation and meet Udacity submission requirements.
